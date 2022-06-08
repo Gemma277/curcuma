@@ -1,3 +1,6 @@
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleRedCrystal, function (sprite, location) {
+    game.over(true)
+})
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -19,4 +22,6 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 scene.setBackgroundColor(9)
 tiles.setCurrentTilemap(tilemap`level1`)
+tiles.placeOnRandomTile(mySprite, assets.tile`transparency16`)
 scene.cameraFollowSprite(mySprite)
+info.startCountdown(20)
